@@ -1,0 +1,31 @@
+body {
+  background-color: #333;
+}
+.cooltext-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aqua;
+}
+
+.char {
+  --delay: calc(var(--char-index) * 10ms);
+  opacity: 0;
+  transform: translate3d(0, 1em, 0);
+  animation: fadeIn 0.8s var(--delay, 0ms) 1 forwards normal
+    cubic-bezier(0.52, 0.32, 0.52, 2.97);
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 3;
+    transform: translateZ(0);
+  }
+}
+
+.cooltext {
+  font-weight: 400;
+  font-size: 5rem;
+}
